@@ -1,2 +1,1 @@
-# medoly-swapi
 # melody-swapi
