@@ -1,7 +1,6 @@
 import { createComponent, RECEIVE_PROPS } from 'melody-component'
 import { bindEvents } from 'melody-hoc'
 import template from './index.twig'
-//aaaa
 
 const initialState = { showContent: false }
 
