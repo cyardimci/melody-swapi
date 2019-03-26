@@ -7,14 +7,15 @@ const initialState = { characterList: [], loading: false, error: '' }
 
 const UPDATE_CHARACTER_LIST = 'UPDATE_CHARACTER_LIST'
 const UPDATE_ERROR = 'UPDATE_ERROR'
+const UPDATE_LOADER = 'UPDATE_LOADER'
 
-const handleUpdateCharacterList = payload => ({
+
+const updateCharacterList = payload => ({
     type: UPDATE_CHARACTER_LIST,
     payload,
 })
 const updateLoader = () => ({ type: UPDATE_LOADER })
 const updateError = payload => ({ type: UPDATE_ERROR, payload })
-const UPDATE_LOADER = 'UPDATE_LOADER'
 
 const stateReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -48,7 +49,7 @@ const enhance = lifecycle({
                     return character && character.data
                 })
             )
-            this.dispatch(handleUpdateCharacterList(characterList))
+            this.dispatch(updateCharacterList(characterList))
             this.dispatch(updateLoader())
         } catch (e) {
             console.log(e)

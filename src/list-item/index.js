@@ -6,7 +6,7 @@ const initialState = { showContent: false }
 
 const HANDLE_CLICK = 'HANDLE_CLICK'
 
-const handleOnClick = () => ({ type: HANDLE_CLICK })
+const handleClick = () => ({ type: HANDLE_CLICK })
 
 const stateReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -28,7 +28,7 @@ const stateReducer = (state = initialState, action) => {
 const withClickHandlers = bindEvents({
     listItem: {
         click(event, component) {
-            component.dispatch(handleOnClick())
+            component.dispatch(handleClick())
         },
     },
 })
