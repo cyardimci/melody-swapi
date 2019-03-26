@@ -1,0 +1,18 @@
+<div class="container" style="margin-top: 10%">
+        {% if loading  %}
+           <div class="text-center">
+             <div class="spinner-border text-warning" style="width: 5rem; height: 5rem;" role="status">
+               <span class="sr-only">Loading...</span>
+             </div>
+           </div>
+        {% elseif error  %}
+        {{ error }}
+        {% else %}
+             <h3>Number of movies: {{ films.count }}</h3>
+                              <div class="accordion">
+                 {%for film in films.list %}
+             {% mount '../list-item' as film.episode_id with { film: film }  %}
+                 {% endfor %}
+                 </div>
+        {% endif %}
+</div>

@@ -1,0 +1,15 @@
+<a
+    ref="{{ listItem }}"
+    class="{{ {
+        base: 'list-group-item list-group-item-action',
+        'active': showContent
+    } | classes }}"
+>{{ film.title }}
+{%if showContent %}
+  <div class="card card-body text-info">
+    {% mount '../character-list' with { characterListEndPoints: film.characters }  %}
+  </div>
+{% endif %}
+
+</a>
+

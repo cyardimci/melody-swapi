@@ -1,0 +1,13 @@
+<div>
+{% if loading  %}
+           <div class="text-center">
+             <div class="spinner-border text-warning" style="width: 5rem; height: 5rem;" role="status">
+               <span class="sr-only">Loading...</span>
+             </div>
+           </div>
+        {% else %}
+        {%for character in characterList %}
+            {% mount '../character-list-item' as loop.index0 with { character: character }  %}
+         {% endfor %}
+        {% endif %}
+</div>
