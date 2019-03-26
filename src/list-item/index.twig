@@ -1,12 +1,16 @@
 <a
     ref="{{ listItem }}"
+    style="{{ {
+        'color': showContent ? 'white',
+        'cursor': 'pointer'
+    } | styles }}"
     class="{{ {
         base: 'list-group-item list-group-item-action',
         'active': showContent
     } | classes }}"
 >{{ film.title }}
 {%if showContent %}
-  <div class="card card-body text-info">
+  <div class="card card-body text-info" style="margin-top: 4px">
     {% mount '../character-list' with { characterListEndPoints: film.characters }  %}
   </div>
 {% endif %}

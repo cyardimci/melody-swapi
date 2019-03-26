@@ -9,7 +9,6 @@ const UPDATE_CHARACTER_LIST = 'UPDATE_CHARACTER_LIST'
 const UPDATE_ERROR = 'UPDATE_ERROR'
 const UPDATE_LOADER = 'UPDATE_LOADER'
 
-
 const updateCharacterList = payload => ({
     type: UPDATE_CHARACTER_LIST,
     payload,
